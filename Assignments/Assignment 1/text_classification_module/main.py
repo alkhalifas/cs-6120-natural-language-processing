@@ -113,15 +113,19 @@ def text_classifier():
 
     while True:
         user_input = input("Review: ")
-        nb_predict = naive_bayes_predict(user_input, 0.0, loglikelihood)
-        if nb_predict == "x":
+
+        if str(user_input) == "x" or str(user_input) == "X":
+            print("Exiting now!")
             break
-        elif nb_predict == 1:
-            print("        Negative Sentiment Detected")
-        elif nb_predict == 0:
-            print("        Positive Sentiment Detected")
+
         else:
-            print("Unknown error. Please contact admin")
+            nb_predict = naive_bayes_predict(user_input, 0.0, loglikelihood)
+            if nb_predict == 1:
+                print("        Negative Sentiment Detected")
+            elif nb_predict == 0:
+                print("        Positive Sentiment Detected")
+            else:
+                print("Unknown error. Please contact admin")
 
 
 if __name__ == '__main__':

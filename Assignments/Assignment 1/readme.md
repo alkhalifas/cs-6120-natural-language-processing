@@ -9,6 +9,8 @@
     - loglikelihood.json: File with the Naive Bayes output in the form of loglikelihoods
 - CS6120_NLP_Assignment_1_Notebook.ipynb: Completed assignment
 - movie_reviews.csv: Raw dataset for the movie reviews
+- images: Directory of images
+- requirements.txt: List of all requirements that need to be installed
 
 
 #### Instructions:

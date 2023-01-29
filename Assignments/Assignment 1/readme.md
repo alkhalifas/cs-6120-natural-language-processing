@@ -23,4 +23,5 @@ IPython Notebook:
 Module:
 - You can type ```python text_classifier.py``` to run the program
   - You will see the following in your command line:
+  
   ![alt text](./images/module_screen_shot.JPG)

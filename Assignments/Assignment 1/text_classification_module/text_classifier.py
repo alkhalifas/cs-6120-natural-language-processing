@@ -9,6 +9,7 @@ nltk.download('popular', quiet=True)
 stopword = nltk.corpus.stopwords.words('english')
 ps = nltk.PorterStemmer()
 
+# Load the loglikelihood file
 with open('artifacts/loglikelihood.json', 'rb') as fp:
     loglikelihood = json.load(fp)
 
@@ -75,6 +76,16 @@ def naive_bayes_predict(review, logprior, loglikelihood):
 
 
 def text_classifier():
+    """
+    Loads the NB model and allows users to classify new reviews
+
+    Params:
+        review: a users input
+        loglikelihood: a dictionary of words mapping to numbers, loaded automatically
+    Return:
+        classification: probabilities of each word, and final classification
+
+    """
     print("""
 ####################################################
    _____            _   _                      _   
@@ -107,9 +118,9 @@ def text_classifier():
         else:
             nb_predict = naive_bayes_predict(user_input, 0.0, loglikelihood)
             if nb_predict == 1:
-                print("        Negative Sentiment Detected")
+                print("        Negative Sentiment Detected (1)")
             elif nb_predict == 0:
-                print("        Positive Sentiment Detected")
+                print("        Positive Sentiment Detected (0)")
             else:
                 print("Unknown error. Please contact admin")
 

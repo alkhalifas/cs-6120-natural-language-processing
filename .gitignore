@@ -1,0 +1,7 @@
+*/.ipynb_checkpoints
+*.txt
+*.zip
+*/data/*
+*/test_data/*
+*.csv
+.idea/*
